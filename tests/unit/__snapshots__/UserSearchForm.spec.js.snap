@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`UserSearchForm renders the component 1`] = `
-<div>
-  <form><input type="text"> <button type="submit">Enviar</button></form>
-</div>
-`;

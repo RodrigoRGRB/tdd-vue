@@ -1,29 +1,33 @@
-<template>
-    <div>
-        <UserSearchForm @submitted="searchUser" />
-        <UserProfile :user="user" />
-    </div>
-</template>
-
 <script>
-import UserSearchForm from '@/components/UserSearchForm'
-import UserProfile from '@/components/UserProfile'
 import { mapState } from 'vuex'
+import VUserSearchForm from '@/components/VUserSearchForm'
+import VUserProfile from '@/components/VUserProfile'
+
 export default {
-    name: 'UserView',
-    components: {
-        UserSearchForm,
-        UserProfile,
-    },
-    methods: {
-        searchUser(username) {
-            this.$store.dispatch('SEARCH_USER', { username })
-        },
-    },
-    computed: {
-        ...mapState({
-            user: 'user',
-        }),
-    },
+  name: 'UserView',
+  components: {
+    VUserSearchForm,
+    VUserProfile,
+  },
+  methods: {
+    searchUser(username) {
+      this.$store.dispatch('SEARCH_USER', { username })
+    }
+  },
+  computed: {
+    ...mapState({
+      user: 'user',
+    })
+  }
 }
 </script>
+
+<template>
+  <div>
+    <VUserSearchForm
+      @submitted="searchUser"
+    />
+    <VUserProfile :user="user" />
+  </div>
+</template>
+
